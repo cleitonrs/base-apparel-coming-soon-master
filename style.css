@@ -1,0 +1,244 @@
+:root {
+  /* Primary */
+  --desaturatedRed: hsl(0, 36%, 70%);
+  --softRed: hsl(0, 93%, 68%);
+
+  /* Neutral */
+  --darkGrayishRed: hsl(0, 6%, 24%);
+
+  /* 62.5% = 10px */
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  font-size: 1.6rem;
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main.container {
+  max-width: 1440px;
+  /* min-height: 100vh; */
+  display: grid;
+  grid-template-areas: 
+    "logo imageGirl"
+    "contents imageGirl";
+  grid-template-columns: repeat(2, 1fr);
+  background-image: url('./images/bg-pattern-desktop.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+section.contents {
+  grid-area: contents;
+  max-width: 83rem;
+  padding: 1rem 21.8rem 6rem 16rem;
+}
+
+.logo {
+  grid-area: logo;
+  padding: 6.5rem 0 0 16rem;
+}
+
+section.contents h1 {
+  font-size: 6.5rem;
+  color: var(--darkGrayishRed);
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+}
+
+section.contents h1 span {
+  font-weight: 300;
+  color: var(--desaturatedRed);
+}
+
+section.contents p {
+  width: 43.7rem;
+  color: var(--desaturatedRed);
+  line-height: 1.8;
+  padding-top: 1.5rem;
+  padding-bottom: 4.6rem;
+  font-weight: 400;
+}
+
+form {
+  position: relative;
+  display: flex;
+}
+
+form input {
+  width: 44.5rem;
+  height: 5.5rem;
+  border: 1px solid rgba(65, 58, 58, .2);
+  border-radius: 3rem;
+  padding-left: 3rem; 
+  background: transparent;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.8rem;
+  outline: none;
+}
+
+form input::placeholder {
+  color: var(--desaturatedRed);
+  font-size: 1.6rem;
+  opacity: 0.5;
+}
+
+form .imgError {
+  position: absolute;
+  top: 30%;
+  right: 12rem;
+  visibility: hidden;
+}
+
+form button {
+  position: absolute;
+  width: 10rem;
+  height: 5.5rem;
+  border: none;
+  border-radius: 3rem;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 1px 10px 10px 5px rgba(238, 140, 140, .2);
+  right: 0px;
+  cursor: pointer;
+  transition: ease-in-out .2s;
+}
+
+form button:hover {
+  filter: brightness(1.2);
+}
+
+form .errorMsg {
+  position: absolute;
+  bottom: -3rem;
+  left: 3rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--softRed);
+  opacity: .7;
+  visibility: hidden;
+}
+
+.imageGirl {
+  grid-area: imageGirl;
+  width: 61rem;
+  height: 80rem;
+  background-image: url('./images/hero-desktop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1275px) {
+  main.container {
+    grid-template-areas:
+       "logo"
+       "imageGirl"
+       "contents";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  section.contents {
+    max-width: 55rem;
+    padding: 3rem;
+  }
+
+  section.contents h1 {
+    padding: 6.5rem 0rem 2.5rem 6.5rem;
+    text-align: center;
+  }
+
+  section.contents p {
+    padding: 0 3.6rem;
+    text-align: center;
+    width: 55rem;
+  }
+
+  form {
+    padding: 3.6rem 3.6rem 9rem 3.6rem;
+  }
+
+  form .errorMsg {
+    bottom: 6rem;
+    left: 6.6rem;
+  }
+
+  .imageGirl {
+    height: 25rem;
+    background-image: url('./images/hero-mobile.jpg');
+  }
+
+  .logo {
+    padding: 3rem 24rem 3rem 3rem;
+  }
+}
+
+@media screen and (max-width: 420px) { 
+  
+  main.container {
+    background-position: initial;
+    grid-template-columns: 375px;
+  }
+
+  section.contents {
+    max-width: 37rem;
+    padding: 1rem;
+  }
+
+  section.contents h1 {
+    font-size: 4rem;
+    padding-left: 3rem;
+  }
+
+  section.contents p {
+    max-width: 37rem;
+    font-size: 1.4rem;
+  }
+
+  form {
+    padding: 3.6rem 1.6rem 9rem 2.6rem;
+  }
+
+  form .imgError {
+    top: 28%;
+    right: 8rem;
+  }
+
+  form input {
+    width: 31rem;
+    height: 5rem;
+    font-size: 1.4rem;
+  }
+
+  form input::placeholder {
+    font-size: 1.4rem;
+  }
+
+  form button {
+    width: 6.5rem;
+    height: 5rem;
+  }
+
+  form .errorMsg {
+    left: 5.6rem;
+  }
+
+  .imageGirl {
+    width: 37.5rem;
+    height: 25rem;
+  }
+}
