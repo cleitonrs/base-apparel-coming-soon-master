@@ -17,7 +17,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop-preview](https://user-images.githubusercontent.com/62728037/133304761-a683e01e-8137-4a7b-bd7c-c3eb6d41d2e3.jpg)
 
 
 ### Links
